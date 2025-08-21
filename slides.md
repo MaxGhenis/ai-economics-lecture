@@ -438,6 +438,26 @@ def test_fred_data_fetch():
 
 ---
 
+# Live Claude Code Demo
+## Watch AI Build Economic Research in Real-Time
+
+### The Challenge for Claude Code:
+*"Build a structural estimation of labor supply elasticity using EITC variation, with machine learning parameter estimation and welfare analysis"*
+
+### What You'll See Claude Code Do:
+- Write tests first (TDD approach)
+- Implement structural model
+- Run PolicyEngine microsimulation  
+- Estimate with gradient boosting
+- Create publication-ready output
+
+### Why This Matters:
+**The "100% Claude Code" philosophy** - Never write code by hand, focus on research design
+
+**🚀 Let me start Claude Code now and we'll watch it work...**
+
+---
+
 # For Academic Economists: Your Roadmap
 
 **Map the Research Process**
