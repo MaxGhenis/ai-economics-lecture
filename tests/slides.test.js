@@ -23,7 +23,7 @@ describe('AI Economics Lecture Slides', () => {
     it('should have proper slide separators', () => {
       const slides = readFileSync('slides.md', 'utf-8');
       const slideCount = (slides.match(/^---$/gm) || []).length;
-      expect(slideCount).toBeGreaterThanOrEqual(15); // At least 15 slides
+      expect(slideCount).toBeGreaterThanOrEqual(20); // At least 20 slides
     });
 
     it('should include tweet embeds', () => {
@@ -71,6 +71,15 @@ describe('AI Economics Lecture Slides', () => {
       const slides = readFileSync('slides.md', 'utf-8');
       expect(slides).toContain('GitHub API');
       expect(slides).toContain('FRED');
+    });
+
+    it('should include PolicyEngine ML/AI features', () => {
+      const slides = readFileSync('slides.md', 'utf-8');
+      expect(slides).toContain('Quantile Regression Forests');
+      expect(slides).toContain('Gradient Descent');
+      expect(slides).toContain('GPT-4');
+      expect(slides).toContain('EITC');
+      expect(slides).toContain('SNAP');
     });
   });
 

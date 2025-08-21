@@ -197,41 +197,67 @@ def analyze_fed_sentiment():
 
 ---
 
-# The PolicyEngine Journey with AI
+# PolicyEngine AI Journey: Enhanced Microdata
 
-## Projects Built with Claude Code
+## Building More Accurate Data for Policy Research
 
-<div class="grid grid-cols-2 gap-4">
+### The Challenge
+- Traditional survey data has gaps and limitations
+- Need comprehensive microdata for accurate policy modeling
 
-<div>
+### Our ML Solution
+- **Quantile Regression Forests** for distribution modeling
+- **Gradient Descent** optimization for calibration
+- Result: More accurate household-level predictions
 
-### Enhanced CPS Launch
-- LLM-powered data imputation
-- Improved microsimulation accuracy
+### Impact
+- Better poverty measurements
+- More precise distributional analysis
 - [policyengine.org/us/research/enhanced-cps-launch](https://policyengine.org/us/research/enhanced-cps-launch)
 
-### Household AI Assistant
-- Natural language policy queries
-- Personalized impact analysis
-- [policyengine.org/us/research/us-household-ai](https://policyengine.org/us/research/us-household-ai)
+---
 
-</div>
+# PolicyEngine AI Journey: GPT-4 Integration
 
-<div>
+## Automated Policy Impact Reports
 
-### GPT Analysis Integration
-- Automated policy explanations
-- Dynamic report generation
-- [policyengine.org/us/research/gpt-analysis](https://policyengine.org/us/research/gpt-analysis)
+### Timeline
+- **March 2023**: GPT-4 launches
+- **April 2023**: We ship automated report generation
+- One month from concept to production!
 
-### LLM-ETI Research
-- Simulating economic responses
-- Replicating elasticity studies
-- [github.com/MaxGhenis/llm-eti](https://github.com/MaxGhenis/llm-eti)
+### Features
+- Natural language policy descriptions
+- Automated impact summaries
+- Dynamic visualizations with explanations
 
-</div>
+### Live Demo
+<!-- LIVE DEMO: Generate a policy report -->
+*Let me show you how it works with a real reform...*
 
-</div>
+[policyengine.org/us/research/gpt-analysis](https://policyengine.org/us/research/gpt-analysis)
+
+---
+
+# PolicyEngine AI Journey: Household AI Assistant
+
+## Explaining Your Benefits with AI
+
+### What It Does
+- Explains specific benefit amounts (EITC, SNAP, etc.)
+- Breaks down eligibility rules in plain English
+- Shows how changes would affect your household
+
+### Example Questions It Answers
+- "Why is my EITC $3,200?"
+- "How does my income affect SNAP benefits?"
+- "What happens if I get married?"
+
+### Live Demo
+<!-- LIVE DEMO: Household AI explanation -->
+*Let's explore a real household's benefits...*
+
+[policyengine.org/us/research/us-household-ai](https://policyengine.org/us/research/us-household-ai)
 
 ---
 
