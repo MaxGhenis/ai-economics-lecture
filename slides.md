@@ -197,69 +197,123 @@ def analyze_fed_sentiment():
 
 ---
 
-# The PolicyEngine Journey with AI
+# PolicyEngine AI Journey: Enhanced Microdata
 
-## Projects Built with Claude Code
+## Building More Accurate Data for Policy Research
 
-<div class="grid grid-cols-2 gap-4">
+### The Challenge
+- Traditional survey data has gaps and limitations
+- Need comprehensive microdata for accurate policy modeling
 
-<div>
+### Our ML Solution
+- **Quantile Regression Forests** for distribution modeling
+- **Gradient Descent** optimization for calibration
+- Result: More accurate household-level predictions
 
-### Enhanced CPS Launch
-- LLM-powered data imputation
-- Improved microsimulation accuracy
+### Impact
+- Better poverty measurements
+- More precise distributional analysis
 - [policyengine.org/us/research/enhanced-cps-launch](https://policyengine.org/us/research/enhanced-cps-launch)
-
-### Household AI Assistant
-- Natural language policy queries
-- Personalized impact analysis
-- [policyengine.org/us/research/us-household-ai](https://policyengine.org/us/research/us-household-ai)
-
-</div>
-
-<div>
-
-### GPT Analysis Integration
-- Automated policy explanations
-- Dynamic report generation
-- [policyengine.org/us/research/gpt-analysis](https://policyengine.org/us/research/gpt-analysis)
-
-### LLM-ETI Research
-- Simulating economic responses
-- Replicating elasticity studies
-- [github.com/MaxGhenis/llm-eti](https://github.com/MaxGhenis/llm-eti)
-
-</div>
-
-</div>
 
 ---
 
-# My Claude Code Evolution: A Tweet Journey
+# PolicyEngine AI Journey: GPT-4 Integration
 
-<div class="tweet-timeline">
+## Automated Policy Impact Reports
 
-## First Steps
+### Timeline
+- **March 2023**: GPT-4 launches
+- **April 2023**: We ship automated report generation
+- One month from concept to production!
+
+### Features
+- Natural language policy descriptions
+- Automated impact summaries
+- Dynamic visualizations with explanations
+
+### Live Demo
+<!-- LIVE DEMO: Generate a policy report -->
+*Let me show you how it works with a real reform...*
+
+[policyengine.org/us/research/gpt-analysis](https://policyengine.org/us/research/gpt-analysis)
+
+---
+
+# PolicyEngine AI Journey: Household AI Assistant
+
+## Explaining Your Benefits with AI
+
+### What It Does
+- Explains specific benefit amounts (EITC, SNAP, etc.)
+- Breaks down eligibility rules in plain English
+- Shows how changes would affect your household
+
+### Example Questions It Answers
+- "Why is my EITC $3,200?"
+- "How does my income affect SNAP benefits?"
+- "What happens if I get married?"
+
+### Live Demo
+<!-- LIVE DEMO: Household AI explanation -->
+*Let's explore a real household's benefits...*
+
+[policyengine.org/us/research/us-household-ai](https://policyengine.org/us/research/us-household-ai)
+
+---
+
+# My Claude Code Journey: First Flight
+
 <Tweet id="1894146555399332060" />
-*"Just landed in Vegas, trying Claude Code!"*
 
-## Growing Confidence
+*"Just landed in Vegas airport, trying Claude Code for the first time!"*
+
+---
+
+# My Claude Code Journey: Merge Conflict
+
 <Tweet id="1897111601662321090" />
+
 *"Resolved a merge conflict effortlessly"*
 
-## Project Management
+---
+
+# My Claude Code Journey: Project Management  
+
 <Tweet id="1894512751080321343" />
+
 *"Building entire features autonomously"*
 
-</div>
+---
 
-<style>
-.tweet-timeline {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
-</style>
+# My Claude Code Journey: GitHub Integration
+
+<Tweet id="1894264298156765275" />
+
+*"Claude Code filing issues without me asking"*
+
+---
+
+# My Claude Code Journey: Test Values
+
+<Tweet id="1895367284174266486" />
+
+*"Learning from mistakes - hard-coded test values"*
+
+---
+
+# My Claude Code Journey: File Recovery
+
+<Tweet id="1908144006489428465" />
+
+*"Deleted a tex file but recovered from memory"*
+
+---
+
+# My Claude Code Journey: Productivity Peak
+
+<Tweet id="1958157709167284323" />
+
+*"I got more done yesterday than I have in any other in recent memory"*
 
 ---
 
@@ -497,10 +551,6 @@ Instead of a Google Doc → Built [dc-office-comparison](https://policyengine.gi
 - **Test-Driven Development** is your superpower
 - **Turn everything into software**
 - **The best $200/mo you'll ever spend**
-
-### The Result?
-<Tweet id="1958157709167284323" />
-*"I got more done yesterday than I have in any other in recent memory"*
 
 ---
 layout: center

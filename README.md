@@ -49,4 +49,4 @@ This presentation was built using Test-Driven Development with Claude Code:
 
 ## 🏗️ Meta
 
-This presentation itself demonstrates the power of Claude Code - it was built entirely using Claude Code with TDD!
+This presentation itself demonstrates the power of Claude Code - it was built entirely using Claude Code with TDD!# Force rebuild Thu Aug 21 11:27:11 EDT 2025
