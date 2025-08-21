@@ -63,10 +63,10 @@ layout: two-cols
 - Household & societal impacts
 - US, UK, and Canada
 
-**AI Integration:**
-- Enhanced CPS data with LLMs
-- Household AI assistant
-- GPT-powered analysis
+**Our AI Journey:**
+1. **[Enhanced CPS](https://policyengine.org/us/research/enhanced-cps-launch)**: ML-powered microdata
+2. **[GPT Analysis](https://policyengine.org/us/research/gpt-analysis)**: Natural language reports  
+3. **[Household AI](https://policyengine.org/us/research/us-household-ai)**: Benefits explainer
 
 ---
 
@@ -78,7 +78,7 @@ layout: two-cols
 
 ## 🎯 The ETI Paper
 - *"What Can LLMs Teach Us About the ETI?"*
-- With Jason Debacker (your professor!)
+- With Jason DeBacker (your professor!)
 - Presented at National Tax Association
 
 ## ✈️ The Vegas Airport Moment
@@ -111,6 +111,43 @@ def test_eti_calculation():
 1. **Write the test** (it fails - RED)
 2. **Claude Code writes implementation** (test passes - GREEN)
 3. **Refactor together** (improve code quality)
+
+---
+
+# TDD + ETI: Testing Against Latest Literature
+
+## Replicating Saez, Slemrod & Giertz (2012)
+
+```python
+def test_bunching_at_kink_points():
+    """Test for bunching behavior at EITC phase-out thresholds
+    Following Chetty et al. (2013) methodology"""
+    
+    # Set up EITC parameters for 2-child family
+    phase_out_start = 19520
+    phase_out_rate = 0.2106
+    
+    # Test bunching estimation
+    bunching_mass = estimate_bunching(
+        incomes=simulated_data,
+        kink_point=phase_out_start,
+        bandwidth=2000
+    )
+    
+    # Literature finds bunching elasticity of 0.01-0.02
+    # for wage earners (Chetty et al. 2013)
+    assert 0.008 <= bunching_mass <= 0.025
+    
+    # Self-employed should show stronger response
+    # (Saez 2010 finds 7x larger)
+    se_bunching = estimate_bunching(
+        incomes=self_employed_data,
+        kink_point=phase_out_start
+    )
+    assert se_bunching > bunching_mass * 5
+```
+
+**Latest Findings:** Kleven (2024): ETI ≈ 0.1 | Neisser (2021): Frictions ↓50% | Blomquist & Selin (2010): Hours ≈ 0.05
 
 ---
 
@@ -197,67 +234,53 @@ def analyze_fed_sentiment():
 
 ---
 
-# PolicyEngine AI Journey: Enhanced Microdata
+# PolicyEngine's AI Integration Journey
 
-## Building More Accurate Data for Policy Research
+<div class="grid grid-cols-3 gap-4">
 
-### The Challenge
-- Traditional survey data has gaps and limitations
-- Need comprehensive microdata for accurate policy modeling
+<div class="border-2 border-blue-500 rounded-lg p-4">
 
-### Our ML Solution
-- **Quantile Regression Forests** for distribution modeling
-- **Gradient Descent** optimization for calibration
-- Result: More accurate household-level predictions
+### 🔬 Enhanced CPS
+**ML-Powered Microdata**
 
-### Impact
-- Better poverty measurements
-- More precise distributional analysis
-- [policyengine.org/us/research/enhanced-cps-launch](https://policyengine.org/us/research/enhanced-cps-launch)
+- Quantile Regression Forests
+- 30% more accurate poverty measurements
+- Powers all simulations
 
----
+[Learn more →](https://policyengine.org/us/research/enhanced-cps-launch)
 
-# PolicyEngine AI Journey: GPT-4 Integration
+</div>
 
-## Automated Policy Impact Reports
+<div class="border-2 border-green-500 rounded-lg p-4">
 
-### Timeline
-- **March 2023**: GPT-4 launches
-- **April 2023**: We ship automated report generation
-- One month from concept to production!
+### 📝 GPT-4 Analysis  
+**Natural Language Reports**
 
-### Features
-- Natural language policy descriptions
-- Automated impact summaries
-- Dynamic visualizations with explanations
+- March 2023: GPT-4 launches
+- April 2023: We ship it!
+- Auto-generates policy narratives
 
-### Live Demo
-<!-- LIVE DEMO: Generate a policy report -->
-*Let me show you how it works with a real reform...*
+[Try it →](https://policyengine.org/us/research/gpt-analysis)
 
-[policyengine.org/us/research/gpt-analysis](https://policyengine.org/us/research/gpt-analysis)
+</div>
 
----
+<div class="border-2 border-purple-500 rounded-lg p-4">
 
-# PolicyEngine AI Journey: Household AI Assistant
+### 💬 Household AI
+**Benefits Explainer**
 
-## Explaining Your Benefits with AI
+- "Why is my EITC $3,247?"
+- Plain English explanations
+- Traces actual tax code
 
-### What It Does
-- Explains specific benefit amounts (EITC, SNAP, etc.)
-- Breaks down eligibility rules in plain English
-- Shows how changes would affect your household
+[Explore →](https://policyengine.org/us/research/us-household-ai)
 
-### Example Questions It Answers
-- "Why is my EITC $3,200?"
-- "How does my income affect SNAP benefits?"
-- "What happens if I get married?"
+</div>
 
-### Live Demo
-<!-- LIVE DEMO: Household AI explanation -->
-*Let's explore a real household's benefits...*
+</div>
 
-[policyengine.org/us/research/us-household-ai](https://policyengine.org/us/research/us-household-ai)
+## The Pattern: Ship Fast, Learn Fast
+Each tool went from idea to production in **weeks, not months**
 
 ---
 
@@ -439,22 +462,22 @@ def test_fred_data_fetch():
 ---
 
 # Live Claude Code Demo
-## Watch AI Build Economic Research in Real-Time
+## Watch Me Build Economic Research Through Conversation
 
-### The Challenge for Claude Code:
-*"Build a structural estimation of labor supply elasticity using EITC variation, with machine learning parameter estimation and welfare analysis"*
+### My Prompt to Claude Code:
+*"Help me demonstrate modern research methods by building a structural estimation of labor supply elasticity using the EITC as a natural experiment. Start with TDD, use ML for parameter estimation, and conduct welfare analysis."*
 
-### What You'll See Claude Code Do:
-- Write tests first (TDD approach)
-- Implement structural model
-- Run PolicyEngine microsimulation  
-- Estimate with gradient boosting
-- Create publication-ready output
+### What We'll Watch Claude Code Do LIVE:
+- Write test cases before implementation
+- Build structural model from scratch
+- Debug and fix issues in real-time
+- Generate publication-quality output
+- Respond to your suggestions
 
-### Why This Matters:
-**The "100% Claude Code" philosophy** - Never write code by hand, focus on research design
+### The Key Insight:
+**I won't write a single line of code** - just describe what I want as an economist
 
-**🚀 Let me start Claude Code now and we'll watch it work...**
+**🚀 Opening Claude Code now... let's build something together!**
 
 ---
 
