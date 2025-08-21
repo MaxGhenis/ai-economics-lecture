@@ -23,9 +23,10 @@ fonts:
 
 <style>
 :root {
-  --slidev-theme-primary: #4A90E2;
-  --pe-blue: #4A90E2;
-  --pe-dark: #2C5282;
+  --slidev-theme-primary: #2C6FB7;
+  --pe-blue: #2C6FB7;
+  --pe-light-blue: #7FADD3;
+  --pe-dark: #1E4A7D;
   --pe-light: #E3F2FD;
 }
 
@@ -44,7 +45,7 @@ layout: two-cols
 
 # About Me
 
-<img src="/images/policyengine square logo.png" class="w-32 mb-4" />
+<img src="/images/policyengine-new-logo.png" class="w-48 mb-4" />
 
 ## Max Ghenis
 - **CEO & Founder**, PolicyEngine
