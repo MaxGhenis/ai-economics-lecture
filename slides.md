@@ -72,8 +72,6 @@ layout: two-cols
 
 # The Journey: From ChatGPT to Claude Code
 
-<div class="timeline">
-
 ## 📅 One Year Ago
 - Saw paper on LLMs simulating survey responses (r=0.9)
 - Started exploring: *"Can LLMs simulate economic behavior?"*
@@ -88,8 +86,6 @@ layout: two-cols
 - Building on a layover
 - First merge conflict: `1897111601662321090`
 - *"Never had such a good time coding"*
-
-</div>
 
 ---
 
@@ -390,7 +386,7 @@ def test_fred_data_fetch():
 
 # For Academic Economists: Your Roadmap
 
-## Map the Research Process
+**Map the Research Process**
 
 <div class="research-flow">
 
@@ -501,6 +497,10 @@ Instead of a Google Doc → Built [dc-office-comparison](https://policyengine.gi
 - **Test-Driven Development** is your superpower
 - **Turn everything into software**
 - **The best $200/mo you'll ever spend**
+
+### The Result?
+<Tweet id="1958157709167284323" />
+*"I got more done yesterday than I have in any other in recent memory"*
 
 ---
 layout: center
