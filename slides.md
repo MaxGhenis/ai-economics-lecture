@@ -261,31 +261,59 @@ def analyze_fed_sentiment():
 
 ---
 
-# My Claude Code Evolution: A Tweet Journey
+# My Claude Code Journey: First Flight
 
-<div class="tweet-timeline">
-
-## First Steps
 <Tweet id="1894146555399332060" />
-*"Just landed in Vegas, trying Claude Code!"*
 
-## Growing Confidence
+*"Just landed in Vegas airport, trying Claude Code for the first time!"*
+
+---
+
+# My Claude Code Journey: Merge Conflict
+
 <Tweet id="1897111601662321090" />
+
 *"Resolved a merge conflict effortlessly"*
 
-## Project Management
+---
+
+# My Claude Code Journey: Project Management  
+
 <Tweet id="1894512751080321343" />
+
 *"Building entire features autonomously"*
 
-</div>
+---
 
-<style>
-.tweet-timeline {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
-</style>
+# My Claude Code Journey: GitHub Integration
+
+<Tweet id="1894264298156765275" />
+
+*"Claude Code filing issues without me asking"*
+
+---
+
+# My Claude Code Journey: Test Values
+
+<Tweet id="1895367284174266486" />
+
+*"Learning from mistakes - hard-coded test values"*
+
+---
+
+# My Claude Code Journey: File Recovery
+
+<Tweet id="1908144006489428465" />
+
+*"Deleted a tex file but recovered from memory"*
+
+---
+
+# My Claude Code Journey: Productivity Peak
+
+<Tweet id="1958157709167284323" />
+
+*"I got more done yesterday than I have in any other in recent memory"*
 
 ---
 
@@ -523,10 +551,6 @@ Instead of a Google Doc → Built [dc-office-comparison](https://policyengine.gi
 - **Test-Driven Development** is your superpower
 - **Turn everything into software**
 - **The best $200/mo you'll ever spend**
-
-### The Result?
-<Tweet id="1958157709167284323" />
-*"I got more done yesterday than I have in any other in recent memory"*
 
 ---
 layout: center
