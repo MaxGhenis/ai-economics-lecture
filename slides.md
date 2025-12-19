@@ -1,41 +1,242 @@
 ---
 theme: default
-title: 'AI for Economics Research: From Theory to Practice'
+title: 'Agentic AI for Policy Research & Microsimulation'
 info: |
-  ## AI for Economics Research
-  Using Claude Code and Test-Driven Development to Transform Economic Analysis
-  
-  University of South Carolina Economics PhD Class
+  ## Agentic AI for Policy Research
+  Using Claude Code and Multi-Agent Workflows to Transform Policy Analysis
+
+  Urban Institute · December 2025
   By Max Ghenis, PolicyEngine
 layout: cover
 fonts:
-  sans: 'Roboto'
+  sans: 'Inter'
   mono: 'Fira Code'
 ---
 
-# AI for Economics Research
-## From Theory to Practice
-
-<div class="absolute bottom-10">
-  <p class="text-2xl">Max Ghenis · PolicyEngine</p>
-  <p class="text-xl opacity-80">University of South Carolina · Economics PhD Class</p>
+<div class="cover-container">
+  <div class="cover-accent"></div>
+  <h1 class="cover-title">Agentic AI for Policy Research</h1>
+  <p class="cover-subtitle">Multi-Agent Workflows & Microsimulation</p>
+  <div class="cover-footer">
+    <img src="/images/policyengine-new-logo.png" class="cover-logo" />
+    <div class="cover-meta">
+      <p class="cover-author">Max Ghenis · PolicyEngine</p>
+      <p class="cover-venue">Urban Institute · December 2025</p>
+    </div>
+  </div>
 </div>
 
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
 :root {
-  --slidev-theme-primary: #2C6FB7;
-  --pe-blue: #2C6FB7;
-  --pe-light-blue: #7FADD3;
-  --pe-dark: #1E4A7D;
-  --pe-light: #E3F2FD;
+  --slidev-theme-primary: #319795;
+  --pe-teal-500: #319795;
+  --pe-teal-300: #4FD1C5;
+  --pe-teal-700: #285E61;
+  --pe-gray-700: #344054;
+  --pe-gray-500: #667085;
+  --pe-gray-100: #F2F4F7;
+  --pe-success: #22C55E;
+  --pe-error: #EF4444;
+  --pe-gradient: linear-gradient(135deg, #319795 0%, #285E61 50%, #1D4044 100%);
+  --pe-gradient-subtle: linear-gradient(180deg, rgba(49,151,149,0.03) 0%, rgba(49,151,149,0.08) 100%);
 }
 
 .slidev-layout {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  background: linear-gradient(180deg, #ffffff 0%, var(--pe-gray-100) 100%);
+  position: relative;
 }
 
-h1, h2, h3 {
-  color: var(--pe-blue);
+.slidev-layout::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 40%;
+  height: 100%;
+  background: var(--pe-gradient-subtle);
+  clip-path: polygon(30% 0, 100% 0, 100% 100%, 0 100%);
+  pointer-events: none;
+}
+
+h1 {
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--pe-gray-700);
+  position: relative;
+}
+
+h1::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 60px;
+  height: 4px;
+  background: var(--pe-gradient);
+  border-radius: 2px;
+}
+
+h2 {
+  font-weight: 600;
+  color: var(--pe-teal-500);
+  letter-spacing: -0.01em;
+}
+
+h3 {
+  font-weight: 600;
+  color: var(--pe-gray-700);
+}
+
+p, li {
+  color: var(--pe-gray-500);
+  line-height: 1.7;
+}
+
+strong {
+  color: var(--pe-gray-700);
+  font-weight: 600;
+}
+
+code {
+  background: rgba(49, 151, 149, 0.1);
+  color: var(--pe-teal-700);
+  padding: 0.2em 0.4em;
+  border-radius: 4px;
+  font-size: 0.9em;
+}
+
+pre {
+  background: var(--pe-gray-700) !important;
+  border-radius: 12px;
+  box-shadow: 0 4px 24px rgba(52, 64, 84, 0.15);
+  border: 1px solid rgba(49, 151, 149, 0.2);
+}
+
+a {
+  color: var(--pe-teal-500);
+  text-decoration: none;
+  border-bottom: 2px solid var(--pe-teal-300);
+  transition: all 0.2s ease;
+}
+
+a:hover {
+  color: var(--pe-teal-700);
+  border-bottom-color: var(--pe-teal-500);
+}
+
+table {
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(52, 64, 84, 0.08);
+}
+
+th {
+  background: var(--pe-gradient);
+  color: white;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.75em;
+  letter-spacing: 0.05em;
+}
+
+td {
+  background: white;
+  border-bottom: 1px solid var(--pe-gray-100);
+}
+
+.grid > div {
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 12px rgba(52, 64, 84, 0.06);
+  border: 1px solid var(--pe-gray-100);
+  transition: all 0.3s ease;
+}
+
+.grid > div:hover {
+  box-shadow: 0 8px 24px rgba(49, 151, 149, 0.12);
+  border-color: var(--pe-teal-300);
+  transform: translateY(-2px);
+}
+
+.border-2 {
+  border: 2px solid var(--pe-teal-300) !important;
+  border-radius: 12px;
+}
+
+/* Cover slide styles */
+.cover-container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  padding: 2rem;
+}
+
+.cover-accent {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 8px;
+  height: 100%;
+  background: var(--pe-gradient);
+}
+
+.cover-title {
+  font-size: 3.5rem;
+  font-weight: 800;
+  color: var(--pe-gray-700);
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  margin-bottom: 0.5rem;
+}
+
+.cover-title::after {
+  display: none;
+}
+
+.cover-subtitle {
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: var(--pe-teal-500);
+  letter-spacing: -0.01em;
+  margin-top: 1rem;
+}
+
+.cover-footer {
+  position: absolute;
+  bottom: 3rem;
+  left: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.cover-logo {
+  height: 48px;
+  width: auto;
+}
+
+.cover-meta {
+  border-left: 2px solid var(--pe-gray-100);
+  padding-left: 1.5rem;
+}
+
+.cover-author {
+  font-weight: 600;
+  color: var(--pe-gray-700);
+  font-size: 1.1rem;
+  margin: 0;
+}
+
+.cover-venue {
+  color: var(--pe-gray-500);
+  font-size: 0.95rem;
+  margin: 0;
 }
 </style>
 
@@ -51,7 +252,7 @@ layout: two-cols
 - **CEO & Founder**, PolicyEngine
 - **Mission**: Make public policy analysis accessible to everyone
 - **Background**: Economics, Data Science, Policy Research
-- **Passion**: Using AI to democratize policy analysis
+- **Today's Focus**: Our multi-agent workflows for policy research
 
 ::right::
 
@@ -63,516 +264,317 @@ layout: two-cols
 - Household & societal impacts
 - US, UK, and Canada
 
-**Our AI Journey:**
-1. **[Enhanced CPS](https://policyengine.org/us/research/enhanced-cps-launch)**: ML-powered microdata
-2. **[GPT Analysis](https://policyengine.org/us/research/gpt-analysis)**: Natural language reports  
-3. **[Household AI](https://policyengine.org/us/research/us-household-ai)**: Benefits explainer
+**Today's Agenda:**
+1. Claude 4.5 Opus & Claude Code revolution
+2. TDD harness for AI development
+3. Live microsim demo
+4. Automating rules-as-code (TANF example)
+5. **Plenty of Q&A time!**
 
 ---
 
-# The Journey: From ChatGPT to Claude Code
+# The Revolution: Claude 4.5 Opus in Claude Code
 
-## 📅 One Year Ago
-- Saw paper on LLMs simulating survey responses (r=0.9)
-- Started exploring: *"Can LLMs simulate economic behavior?"*
+## What Changed Everything (October 2025)
+- **Claude 4.5 Opus**: Most capable model, now in Claude Code
+- **Extended thinking**: Deeper reasoning for complex policy analysis
+- **Agentic capabilities**: Runs tools, writes code, manages git, deploys
 
-## 🎯 The ETI Paper
-- *"What Can LLMs Teach Us About the ETI?"*
-- With Jason DeBacker (your professor!)
-- Presented at National Tax Association
+## Why This Matters for Policy Research
+- Building new software tools is now **effortless**
+- Complex microsimulation queries answered conversationally
+- Multi-file codebases handled seamlessly
+- API integrations (GCloud, Vercel, Gmail) work out of the box
 
-## ✈️ The Vegas Airport Moment
-- 6 months ago: Claude Code launches
-- Building on a layover
-- First merge conflict: `1897111601662321090`
-- *"Never had such a good time coding"*
+## Recent PolicyEngine Examples
+- **[aca-calc.vercel.app](https://aca-calc.vercel.app)**: ACA calculator built in hours
+- **TANF automation**: 2 weeks per state → 0.5 days
+- **Research tools**: Complete React apps with backends, deployed
 
 ---
 
-# Test-Driven Development: The Secret Weapon
+# TDD: The Harness for AI-Driven Development
 
-## Why TDD + Claude Code = 🚀
+## The New Paradigm: From Notebooks to Production Repos
+
+We're **replacing Jupyter notebooks** with dedicated repos:
+- Lightweight Python packages with **test suites**
+- CI/CD pipelines (GitHub Actions)
+- Data generation scripts
+- **React frontends** with optional backends
+- Deployed to Vercel automatically
+
+## Why TDD Gives Claude Code a Harness
 
 ```python
-def test_eti_calculation():
-    """Test elasticity of taxable income calculation"""
-    pre_tax_income = 100000
-    post_tax_income = 95000
-    tax_rate_1 = 0.3
-    tax_rate_2 = 0.35
-    
-    eti = calculate_eti(pre_tax_income, post_tax_income, 
-                        tax_rate_1, tax_rate_2)
-    
-    assert abs(eti - (-0.69)) < 0.01  # Expected ETI
+def test_snap_benefits():
+    """Test SNAP benefit calculation matches expected"""
+    household = create_household(income=25000, size=3)
+    snap = calculate_snap(household)
+    assert 2000 <= snap <= 7000  # Expected annual range
 ```
 
-## Red-Green-Refactor Cycle
-1. **Write the test** (it fails - RED)
-2. **Claude Code writes implementation** (test passes - GREEN)
-3. **Refactor together** (improve code quality)
+**TDD constrains Claude Code** - it can iterate freely knowing tests catch errors.
+**CI validates everything** - no manual review of every line needed.
 
 ---
 
-# TDD + ETI: Testing Against Latest Literature
+# Claude Code Can Write Papers Too
 
-## Replicating Saez, Slemrod & Giertz (2012)
+## Example: CRFB TOB Budget Analysis
+**[policyengine.github.io/crfb-tob-impacts](https://policyengine.github.io/crfb-tob-impacts)**
+
+Claude Code built the entire JupyterBook:
+- Policy analysis and narrative
+- Data visualizations
+- Interactive tables
+- Deployed automatically
+
+## The Workflow
+
+```bash
+# User prompt:
+"Analyze the budget impact of CRFB's proposals
+using PolicyEngine microsim. Create a JupyterBook
+with executive summary, methodology, and results."
+
+# Claude Code does:
+✓ Creates repo structure
+✓ Writes analysis code with TDD
+✓ Generates figures and tables
+✓ Writes narrative sections
+✓ Sets up CI/CD
+✓ Deploys to GitHub Pages
+```
+
+**Result**: Publication-ready analysis in hours, not weeks
+
+---
+
+# Automating Rules-as-Code: TANF Example
+
+## The Problem
+Encoding state TANF rules into PolicyEngine: **~2 weeks per state**
+
+## The Claude Code Plugin Solution
+
+1. **Golden PR**: One manually-reviewed state encoding as template
+2. **Claude Code Plugin**: Custom agents with domain knowledge
+3. **TDD harness**: Tests verify benefit calculations match expected
+4. **Iteration**: Claude Code runs tests, fixes until green
+
+## The Result
+
+| Before | After |
+|--------|-------|
+| ~2 weeks per state | ~0.5 days per state |
+| Manual code review | Automated testing |
+| One developer | AI + human oversight |
+
+**40x faster** - opens path to full 50-state coverage
+
+---
+
+# What Are Claude Code Plugins?
+
+## Customizing AI for Your Domain
+
+Plugins let you teach Claude Code about your specific domain:
+
+```yaml
+# .claude/agents/policyengine-dev.md
+name: PolicyEngine Developer
+description: Encodes tax-benefit rules into PolicyEngine
+tools: [Bash, Read, Write, Edit, Grep]
+
+You are an expert in the PolicyEngine microsimulation
+framework. When encoding benefit rules:
+1. Create parameters in YAML
+2. Write vectorized formulas
+3. Generate test cases from policy documents
+4. Validate against official examples
+```
+
+## Why This Matters
+- **Domain expertise baked in** - Claude knows PE conventions
+- **Consistent output** - follows our coding patterns
+- **Scalable** - junior team members get senior-level guidance
+
+---
+
+# Live Demo: Let's Build Something Together!
+
+## PolicyEngine Microsim at Your Fingertips
 
 ```python
-def test_bunching_at_kink_points():
-    """Test for bunching behavior at EITC phase-out thresholds
-    Following Chetty et al. (2013) methodology"""
-    
-    # Set up EITC parameters for 2-child family
-    phase_out_start = 19520
-    phase_out_rate = 0.2106
-    
-    # Test bunching estimation
-    bunching_mass = estimate_bunching(
-        incomes=simulated_data,
-        kink_point=phase_out_start,
-        bandwidth=2000
-    )
-    
-    # Literature finds bunching elasticity of 0.01-0.02
-    # for wage earners (Chetty et al. 2013)
-    assert 0.008 <= bunching_mass <= 0.025
-    
-    # Self-employed should show stronger response
-    # (Saez 2010 finds 7x larger)
-    se_bunching = estimate_bunching(
-        incomes=self_employed_data,
-        kink_point=phase_out_start
-    )
-    assert se_bunching > bunching_mass * 5
+from policyengine_us import Microsimulation
+sim = Microsimulation()
+
+# Answer policy questions instantly:
+eitc_total = sim.calculate("eitc", period=2025).sum() / 1e9
+ctc_total = sim.calculate("ctc", period=2025).sum() / 1e9
+snap_total = sim.calculate("snap", period=2025).sum() / 1e9
+
+# Results:
+# Total federal EITC:      $49.6 billion
+# Total Child Tax Credit:  $140.7 billion
+# Total SNAP benefits:     $91.9 billion
 ```
 
-**Latest Findings:** Kleven (2024): ETI ≈ 0.1 | Neisser (2021): Frictions ↓50% | Blomquist & Selin (2010): Hours ≈ 0.05
+## What Should We Build?
+
+**Ideas (you pick!):**
+- Policy reform analysis (e.g., expand EITC)
+- State-level benefit comparison
+- Interactive calculator (deployed live!)
+- Something from your research agenda?
 
 ---
 
-# TDD in Action: Grant Proposals
+# The Full Stack: Claude Code's Capabilities
 
-```python
-def test_grant_proposal_word_count():
-    """Ensure grant sections meet word limits"""
-    proposal = load_grant_proposal()
-    
-    # Test executive summary
-    exec_summary = proposal['executive_summary']
-    word_count = len(exec_summary.split())
-    assert word_count <= 250, f"Executive summary: {word_count} words (max 250)"
-    
-    # Test project description
-    description = proposal['project_description']
-    word_count = len(description.split())
-    assert word_count <= 2000, f"Description: {word_count} words (max 2000)"
-```
-
-**Real example**: Used TDD to ensure our grant proposals met all requirements!
-
----
-
-# Evolution of My Workflow
-
-<div class="grid grid-cols-2 gap-8">
-
-<div>
-
-## Before Claude Code
-- ChatGPT for help
-- Manual copy-paste
-- Context switching
-- ~2-3x productivity boost
-
-</div>
-
-<div>
-
-## With Claude Code + TDD
-- Integrated terminal workflow
-- Automatic file management
-- **5-10x productivity**
-- $200/mo Claude Max = best investment
-
-</div>
-
-</div>
-
-## The Game Changer: `--dangerously-skip-permissions`
-- 30+ minute sessions
-- Complete project transformations
-- *"AGI is already here"*
-
----
-
-# Live Demo: Economic Analysis with Claude Code
-
-<!-- LIVE DEMO: Fed minutes analysis -->
-
-## Let's analyze Fed minutes in real-time!
-
-```python
-# We'll build this together with Claude Code
-import pandas as pd
-import requests
-from transformers import pipeline
-
-def analyze_fed_sentiment():
-    """Analyze Federal Reserve meeting minutes sentiment"""
-    # Fetch latest Fed minutes
-    # Apply sentiment analysis
-    # Calculate hawkish/dovish score
-    # Visualize results
-    pass
-```
-
-### Using TDD approach:
-1. First, write tests for what we want
-2. Let Claude Code implement
-3. Verify with real Fed data
-
----
-
-# PolicyEngine's AI Integration Journey
-
-<div class="grid grid-cols-3 gap-4">
-
-<div class="border-2 border-blue-500 rounded-lg p-4">
-
-### 🔬 Enhanced CPS
-**ML-Powered Microdata**
-
-- Quantile Regression Forests
-- 30% more accurate poverty measurements
-- Powers all simulations
-
-[Learn more →](https://policyengine.org/us/research/enhanced-cps-launch)
-
-</div>
-
-<div class="border-2 border-green-500 rounded-lg p-4">
-
-### 📝 GPT-4 Analysis  
-**Natural Language Reports**
-
-- March 2023: GPT-4 launches
-- April 2023: We ship it!
-- Auto-generates policy narratives
-
-[Try it →](https://policyengine.org/us/research/gpt-analysis)
-
-</div>
-
-<div class="border-2 border-purple-500 rounded-lg p-4">
-
-### 💬 Household AI
-**Benefits Explainer**
-
-- "Why is my EITC $3,247?"
-- Plain English explanations
-- Traces actual tax code
-
-[Explore →](https://policyengine.org/us/research/us-household-ai)
-
-</div>
-
-</div>
-
-## The Pattern: Ship Fast, Learn Fast
-Each tool went from idea to production in **weeks, not months**
-
----
-
-# My Claude Code Journey: First Flight
-
-<Tweet id="1894146555399332060" />
-
-*"Just landed in Vegas airport, trying Claude Code for the first time!"*
-
----
-
-# My Claude Code Journey: Merge Conflict
-
-<Tweet id="1897111601662321090" />
-
-*"Resolved a merge conflict effortlessly"*
-
----
-
-# My Claude Code Journey: Project Management  
-
-<Tweet id="1894512751080321343" />
-
-*"Building entire features autonomously"*
-
----
-
-# My Claude Code Journey: GitHub Integration
-
-<Tweet id="1894264298156765275" />
-
-*"Claude Code filing issues without me asking"*
-
----
-
-# My Claude Code Journey: Test Values
-
-<Tweet id="1895367284174266486" />
-
-*"Learning from mistakes - hard-coded test values"*
-
----
-
-# My Claude Code Journey: File Recovery
-
-<Tweet id="1908144006489428465" />
-
-*"Deleted a tex file but recovered from memory"*
-
----
-
-# My Claude Code Journey: Productivity Peak
-
-<Tweet id="1958157709167284323" />
-
-*"I got more done yesterday than I have in any other in recent memory"*
-
----
-
-# Screenshots: Building This Presentation
-
-<div class="grid grid-cols-2 gap-4">
-
-<div>
-
-## github-issue.png
-![GitHub Issue Creation](/screenshots/github-issue.png)
-*Claude Code creating issues automatically*
-
-</div>
-
-<div>
-
-## workflow-screenshot.png
-![Workflow](/screenshots/workflow-screenshot.png)
-*The full development workflow*
-
-</div>
-
-</div>
-
-## claude-code-building.png
-![Building with Claude Code](/screenshots/claude-code-building.png)
-*Using Claude Code to build this very presentation!*
-
----
-
-# Real Economics Research: The ETI Paper
-
-## "What Can LLMs Teach Us About the ETI?"
-
-### Key Findings:
-- LLMs can simulate survey responses with **r=0.9** accuracy
-- Successfully replicated **elasticity** studies
-- Cost: ~$50 in API calls vs $500K+ for traditional **survey experiments**
-
-### Methodology with TDD:
-```python
-def test_llm_survey_response():
-    """Test LLM's ability to simulate survey responses"""
-    prompt = create_survey_prompt(income=75000, tax_rate=0.25)
-    response = llm.generate(prompt)
-    
-    # Validate response is within expected bounds
-    assert 0 <= response.labor_supply_change <= 1.0
-    assert response.confidence >= 0.8
-```
-
----
-
-# Turn Everything Into Software
-
-## The Philosophy
-
-> "TURN EVERYTHING INTO SOFTWARE. I genuinely think AGI is already here, and it's Claude Code Opus."
-
-### What This Means:
-1. **Grant proposals** → Interactive websites
-2. **Research papers** → Reproducible notebooks
-3. **Data analysis** → Automated pipelines
-4. **Literature reviews** → Living documents
-
-### Real Examples:
-- **Office evaluation** → [Interactive comparison site](https://policyengine.github.io/dc-office-comparison/)
-  - Pricing, travel times, amenities
-  - Built faster than writing a doc!
-  
-- **Grant proposals** → Interactive websites
-```javascript
-// Instead of PDFs, build interactive experiences
-const OfficeComparison = () => {
-  return (
-    <PricingMatrix />
-    <CommuteCalculator />
-    <AmenityScores />
-  );
-};
-```
-
----
-
-# API Integrations: Your Research Assistant
-
-## Connect Everything
+## We've Given Claude Code Access To:
 
 <div class="grid grid-cols-2 gap-6">
 
 <div>
 
-### Data Sources
-- **FRED API**: Economic indicators
-- **World Bank**: Development data
-- **Census**: Demographic data
-- **GitHub API**: Version control
+### Development & Deploy
+- **Git/GitHub**: Commits, PRs, issues
+- **Vercel**: Deploy frontends instantly
+- **GCloud**: Backend services
+- **npm/pip**: Package management
 
 </div>
 
 <div>
 
-### Productivity Tools
-- **Google Drive**: Document management
-- **Calendar**: Schedule optimization
-- **Email**: Automated responses
-- **Social Media**: Research dissemination
+### Communication & Data
+- **Gmail**: Draft and send emails
+- **Google Drive**: Read/write docs
+- **APIs**: FRED, Census, etc.
+- **Databases**: Read/write data
 
 </div>
 
 </div>
 
-## Example: Automated Data Pipeline
-```python
-@test
-def test_fred_data_fetch():
-    data = fetch_fred_series('UNRATE')
-    assert len(data) > 0
-    assert 'date' in data.columns
+## Result: End-to-End Automation
+
+```bash
+"Build an EITC calculator, deploy to Vercel,
+email the stakeholders with the link"
+```
+
+**Claude Code handles the entire workflow** - no context switching
+
+---
+
+# Multi-Agent Workflows for Policy Research
+
+## Reference: [policyengine.org/uk/research/multi-agent-workflows-policy-research](https://www.policyengine.org/uk/research/multi-agent-workflows-policy-research)
+
+### Key Concepts
+
+1. **Orchestrator Agent**: Manages overall task, delegates to specialists
+2. **Research Agent**: Gathers context, reads legislation
+3. **Coding Agent**: Implements with TDD
+4. **Review Agent**: Validates output quality
+
+### Why Multiple Agents?
+
+- **Specialization**: Each agent optimized for its task
+- **Parallel work**: Research while coding
+- **Quality control**: Separate review from implementation
+- **Scalability**: Add agents for new domains
+
+*Recommended pre-reading for this session!*
+
+---
+
+# Example: ACA Health Calculator
+
+## [aca-calc.vercel.app](https://aca-calc.vercel.app)
+
+Built entirely with Claude Code in one session:
+
+- **React frontend** with form inputs
+- **PolicyEngine-US integration** for calculations
+- **Instant deployment** to Vercel
+- **Total time**: ~3 hours from concept to live
+
+### The Workflow
+
+```
+User: "Build a calculator that shows ACA subsidy
+eligibility based on income and household size"
+
+Claude Code:
+→ Creates React project structure
+→ Implements PolicyEngine API calls
+→ Designs responsive UI
+→ Writes tests
+→ Deploys to Vercel
+→ Returns live URL
 ```
 
 ---
 
-# Live Claude Code Demo
-## Watch Me Build Economic Research Through Conversation
+# Collaborative Building Time!
 
-### My Prompt to Claude Code:
-*"Help me demonstrate modern research methods by building a structural estimation of labor supply elasticity using the EITC as a natural experiment. Start with TDD, use ML for parameter estimation, and conduct welfare analysis."*
+## What Should We Build Together?
 
-### What We'll Watch Claude Code Do LIVE:
-- Write test cases before implementation
-- Build structural model from scratch
-- Debug and fix issues in real-time
-- Generate publication-quality output
-- Respond to your suggestions
+### Option 1: Policy Reform Calculator
+- Pick a reform (expand EITC, CTC, SNAP, etc.)
+- Calculate budget and distributional impact
+- Deploy as interactive tool
 
-### The Key Insight:
-**I won't write a single line of code** - just describe what I want as an economist
+### Option 2: State Comparison Tool
+- Compare benefit levels across states
+- Interactive map or table
+- Answer: "What if I moved from X to Y?"
 
-**🚀 Opening Claude Code now... let's build something together!**
+### Option 3: Your Research Question
+- Something from Urban's current projects?
+- A microsimulation question you've been curious about?
+
+**Let's decide together and build it live!**
 
 ---
 
-# For Academic Economists: Your Roadmap
+# Lessons Learned
 
-**Map the Research Process**
+## What Works Best with Claude Code
 
-<div class="research-flow">
+<div class="grid grid-cols-2 gap-6">
 
-1. **Literature Review** → Automated paper summaries
-2. **Data Collection** → API integrations with TDD
-3. **Cleaning & Analysis** → Test-driven transformations
-4. **Econometrics** → Validated model specifications
-5. **Visualization** → Interactive, reproducible charts
-6. **Writing** → LaTeX + Markdown + Web
-7. **Peer Review** → Simulated referee reports
+<div>
+
+### Do This
+- Start with TDD - tests constrain the AI
+- Use dedicated repos, not notebooks
+- Give access to deploy (Vercel, GCloud)
+- Let it handle entire workflows
+- Review outputs, not line-by-line
 
 </div>
 
-## Why Not Also:
-- Build a web version with **Jupyter Book**
-- Create interactive visualizations
-- Simulate referee feedback
-- Auto-improve based on reviews
+<div>
 
----
+### Avoid This
+- Manual code review of every line
+- Context switching between tools
+- Notebooks for production code
+- Writing code yourself
+- Under-specifying requirements
 
-# Live Coding: Build an Economic Analysis
+</div>
 
-<!-- LIVE DEMO: Build a complete analysis -->
+</div>
 
-## Let's create a labor supply analysis with TDD!
-
-```python
-# Start with the test
-def test_labor_supply_elasticity():
-    """Test labor supply response to tax changes"""
-    # Given
-    baseline_hours = 40
-    wage = 25
-    tax_increase = 0.05
-    
-    # When
-    new_hours = calculate_labor_supply(
-        baseline_hours, wage, tax_increase
-    )
-    
-    # Then
-    elasticity = (new_hours - baseline_hours) / baseline_hours
-    assert -0.3 <= elasticity <= -0.1  # Expected range
-```
-
-**Let Claude Code implement the economics!**
-
----
-
-# The Ultimate Challenge: 100% Claude Code
-
-## My New Rule: Never Write Code by Hand
-
-### The Challenge:
-- **NO manual coding** - not even variable names
-- **NO docs** - build interactive sites instead
-- **NO emails** - let Claude Code draft them
-- **NO calendar management** - API integration
-- **NO ChatGPT/Claude.ai** - only Claude Code
-
-### Example: Office Space Evaluation
-Instead of a Google Doc → Built [dc-office-comparison](https://policyengine.github.io/dc-office-comparison/)
-- Pricing comparisons
-- Commute times for each team member
-- Tech/econ focus ratings
-- Amenity scores
-**Time saved: 50%+**
-
----
-
-# The One Week Challenge
-
-## You have ONE WEEK before throttling begins!
-
-### Your Mission:
-1. **Install Claude Code** with Opus 4
-2. **Start with TDD** - write tests first
-3. **Build something ambitious** - a full research project
-4. **Use --dangerously-skip-permissions** for long sessions
-5. **Transform your workflow** permanently
-
-### Ideas to Try:
-- Replicate a famous paper
-- Build an interactive textbook
-- Create a policy simulator
-- Automate your research pipeline
-
-> "Make it your life's most productive week!"
+## The Mindset Shift
+**From**: "Help me write this function"
+**To**: "Build me this entire tool with tests, CI, and deployment"
 
 ---
 
@@ -580,40 +582,106 @@ Instead of a Google Doc → Built [dc-office-comparison](https://policyengine.gi
 
 ## Get Started Today
 
-### Tools:
+### Tools & Examples:
 - **Claude Code**: [claude.ai/code](https://claude.ai/code)
 - **PolicyEngine**: [policyengine.org](https://policyengine.org)
-- **LLM-ETI Paper**: [github.com/MaxGhenis/llm-eti](https://github.com/MaxGhenis/llm-eti)
+- **ACA Calculator**: [aca-calc.vercel.app](https://aca-calc.vercel.app)
+- **CRFB Analysis**: [policyengine.github.io/crfb-tob-impacts](https://policyengine.github.io/crfb-tob-impacts)
+
+### Reading:
+- **Multi-Agent Blog Post**: [policyengine.org/uk/research/multi-agent-workflows-policy-research](https://www.policyengine.org/uk/research/multi-agent-workflows-policy-research)
 
 ### Connect:
-- **Twitter/X**: [@MaxGhenis](https://twitter.com/MaxGhenis)
-- **GitHub**: [github.com/MaxGhenis](https://github.com/MaxGhenis)
+- **Max Ghenis**: max@policyengine.org · [@MaxGhenis](https://twitter.com/MaxGhenis)
 - **PolicyEngine**: [@PolicyEngine](https://twitter.com/PolicyEngine)
-
-### Remember:
-- **Test-Driven Development** is your superpower
-- **Turn everything into software**
-- **The best $200/mo you'll ever spend**
 
 ---
 layout: center
 class: text-center
 ---
 
-# Questions?
-
-## Let's explore the future of economics research together!
-
-<div class="mt-10">
-  <p class="text-2xl">Max Ghenis</p>
-  <p class="text-xl opacity-80">max@policyengine.org</p>
+<div class="closing-container">
+  <div class="closing-accent-top"></div>
+  <h1 class="closing-title">Questions & Discussion</h1>
+  <p class="closing-subtitle">Let's explore what's possible for policy research!</p>
+  <div class="closing-contact">
+    <div class="closing-card">
+      <img src="/images/policyengine-new-logo.png" class="closing-logo" />
+      <p class="closing-name">Max Ghenis</p>
+      <p class="closing-email">max@policyengine.org</p>
+    </div>
+  </div>
+  <div class="closing-accent-bottom"></div>
 </div>
 
 <style>
-h1 {
-  background: linear-gradient(45deg, var(--pe-blue), var(--pe-dark));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+.closing-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  position: relative;
+}
+
+.closing-accent-top, .closing-accent-bottom {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 120px;
+  height: 4px;
+  background: linear-gradient(90deg, #319795 0%, #4FD1C5 50%, #319795 100%);
+  border-radius: 2px;
+}
+
+.closing-accent-top { top: 2rem; }
+.closing-accent-bottom { bottom: 2rem; }
+
+.closing-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #344054;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.5rem;
+}
+
+.closing-title::after { display: none; }
+
+.closing-subtitle {
+  font-size: 1.25rem;
+  color: #319795;
+  font-weight: 400;
+  margin-bottom: 2.5rem;
+}
+
+.closing-contact {
+  margin-top: 1rem;
+}
+
+.closing-card {
+  background: white;
+  padding: 2rem 3rem;
+  border-radius: 16px;
+  box-shadow: 0 4px 24px rgba(52, 64, 84, 0.1);
+  border: 1px solid #F2F4F7;
+  text-align: center;
+}
+
+.closing-logo {
+  height: 40px;
+  margin-bottom: 1rem;
+}
+
+.closing-name {
+  font-weight: 600;
+  color: #344054;
+  font-size: 1.25rem;
+  margin: 0 0 0.25rem 0;
+}
+
+.closing-email {
+  color: #319795;
+  font-size: 1rem;
+  margin: 0;
 }
 </style>
