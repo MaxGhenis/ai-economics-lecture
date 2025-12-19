@@ -184,18 +184,16 @@ layout: two-cols
 
 # PolicyEngine
 
-**What we do:**
-- Free, open-source tax-benefit microsimulation
-- Model reforms instantly
-- Household & societal impacts
-- US, UK, and Canada
+**Open-source tax-benefit microsimulation**
+- US, UK, Canada
+- Similar space to TRIM, TPC models
 
 **Today's Agenda:**
-1. Claude 4.5 Opus & Claude Code revolution
-2. TDD harness for AI development
-3. Live microsim demo
-4. Automating rules-as-code (TANF example)
-5. **Plenty of Q&A time!**
+1. Claude 4.5 Opus & Claude Code
+2. TDD as AI harness
+3. Automating rules-as-code
+4. Live demo (your choice!)
+5. **Q&A throughout**
 
 ---
 
