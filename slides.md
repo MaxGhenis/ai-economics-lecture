@@ -60,18 +60,16 @@ layout: two-cols
 ## What Changed Everything (December 2025)
 - **Claude 4.5 Opus**: Most capable model, now in Claude Code
 - **Extended thinking**: Deeper reasoning for complex policy analysis
-- **Agentic capabilities**: Runs tools, writes code, manages git, deploys
+- **Agentic**: Runs tools, writes code, manages git, deploys
 
 ## Why This Matters for Policy Research
-- Building new software tools is now **effortless**
-- Complex microsimulation queries answered conversationally
-- Multi-file codebases handled seamlessly
+- Building software tools is now **effortless**
+- Complex microsim queries answered conversationally
 - API integrations (GCloud, Vercel, Gmail) work out of the box
 
-## Recent PolicyEngine Examples
-- **[aca-calc.vercel.app](https://aca-calc.vercel.app)**: ACA calculator built in hours
-- **TANF automation**: 2 weeks per state → 0.5 days
-- **Research tools**: Complete React apps with backends, deployed
+## Recent Examples
+- **[aca-calc.vercel.app](https://aca-calc.vercel.app)**: ACA calculator in hours
+- **TANF automation**: 2 weeks → 0.5 days per state
 
 ---
 
