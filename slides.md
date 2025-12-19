@@ -24,144 +24,219 @@ fonts:
 </div>
 
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap');
 
 :root {
   --slidev-theme-primary: #319795;
-  --pe-teal-500: #319795;
-  --pe-teal-300: #4FD1C5;
-  --pe-teal-700: #285E61;
-  --pe-gray-700: #344054;
-  --pe-gray-500: #667085;
-  --pe-gray-100: #F2F4F7;
-  --pe-success: #22C55E;
-  --pe-error: #EF4444;
-  --pe-gradient: linear-gradient(135deg, #319795 0%, #285E61 50%, #1D4044 100%);
-  --pe-gradient-subtle: linear-gradient(180deg, rgba(49,151,149,0.03) 0%, rgba(49,151,149,0.08) 100%);
+  --teal: #319795;
+  --teal-bright: #4FD1C5;
+  --teal-glow: rgba(49, 151, 149, 0.4);
+  --dark: #0a0f1a;
+  --dark-card: #111827;
+  --dark-border: #1e293b;
+  --slate: #94a3b8;
+  --white: #f8fafc;
 }
 
+/* Base dark theme with grid pattern */
 .slidev-layout {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-  background: linear-gradient(180deg, #ffffff 0%, var(--pe-gray-100) 100%);
+  font-family: 'Inter', sans-serif;
+  background: var(--dark);
+  color: var(--white);
   position: relative;
+  overflow: hidden;
 }
 
+/* Subtle grid background */
 .slidev-layout::before {
   content: '';
   position: absolute;
-  top: 0;
-  right: 0;
-  width: 40%;
-  height: 100%;
-  background: var(--pe-gradient-subtle);
-  clip-path: polygon(30% 0, 100% 0, 100% 100%, 0 100%);
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(49, 151, 149, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(49, 151, 149, 0.03) 1px, transparent 1px);
+  background-size: 50px 50px;
   pointer-events: none;
 }
 
-h1 {
-  font-weight: 700;
-  letter-spacing: -0.02em;
-  color: var(--pe-gray-700);
-  position: relative;
-}
-
-h1::after {
+/* Glowing orb accent */
+.slidev-layout::after {
   content: '';
   position: absolute;
-  bottom: -8px;
-  left: 0;
-  width: 60px;
-  height: 4px;
-  background: var(--pe-gradient);
+  top: -20%;
+  right: -10%;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, var(--teal-glow) 0%, transparent 70%);
+  pointer-events: none;
+  opacity: 0.6;
+}
+
+/* Typography */
+h1 {
+  font-family: 'Inter', sans-serif;
+  font-weight: 800;
+  font-size: 2.75rem;
+  letter-spacing: -0.03em;
+  color: var(--white);
+  position: relative;
+  line-height: 1.1;
+}
+
+h1::before {
+  content: '';
+  position: absolute;
+  left: -24px;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: linear-gradient(180deg, var(--teal-bright) 0%, var(--teal) 100%);
   border-radius: 2px;
+  box-shadow: 0 0 20px var(--teal-glow);
 }
 
 h2 {
+  font-family: 'Inter', sans-serif;
   font-weight: 600;
-  color: var(--pe-teal-500);
+  font-size: 1.5rem;
+  color: var(--teal-bright);
   letter-spacing: -0.01em;
+  margin-top: 0.5rem;
 }
 
 h3 {
   font-weight: 600;
-  color: var(--pe-gray-700);
+  color: var(--white);
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 1rem;
 }
 
 p, li {
-  color: var(--pe-gray-500);
-  line-height: 1.7;
+  color: var(--slate);
+  line-height: 1.8;
+  font-weight: 400;
+}
+
+li {
+  margin-bottom: 0.5rem;
 }
 
 strong {
-  color: var(--pe-gray-700);
+  color: var(--white);
   font-weight: 600;
 }
 
+/* Inline code */
 code {
-  background: rgba(49, 151, 149, 0.1);
-  color: var(--pe-teal-700);
-  padding: 0.2em 0.4em;
+  font-family: 'JetBrains Mono', monospace;
+  background: rgba(49, 151, 149, 0.15);
+  color: var(--teal-bright);
+  padding: 0.2em 0.5em;
   border-radius: 4px;
-  font-size: 0.9em;
+  font-size: 0.85em;
+  border: 1px solid rgba(49, 151, 149, 0.3);
 }
 
+/* Code blocks */
 pre {
-  background: var(--pe-gray-700) !important;
+  font-family: 'JetBrains Mono', monospace !important;
+  background: var(--dark-card) !important;
   border-radius: 12px;
-  box-shadow: 0 4px 24px rgba(52, 64, 84, 0.15);
-  border: 1px solid rgba(49, 151, 149, 0.2);
+  border: 1px solid var(--dark-border);
+  box-shadow:
+    0 4px 30px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
 }
 
+/* Links */
 a {
-  color: var(--pe-teal-500);
+  color: var(--teal-bright);
   text-decoration: none;
-  border-bottom: 2px solid var(--pe-teal-300);
+  border-bottom: 1px solid transparent;
   transition: all 0.2s ease;
 }
 
 a:hover {
-  color: var(--pe-teal-700);
-  border-bottom-color: var(--pe-teal-500);
+  border-bottom-color: var(--teal-bright);
+  text-shadow: 0 0 20px var(--teal-glow);
 }
 
+/* Tables */
 table {
   border-radius: 8px;
   overflow: hidden;
-  box-shadow: 0 2px 8px rgba(52, 64, 84, 0.08);
+  border: 1px solid var(--dark-border);
 }
 
 th {
-  background: var(--pe-gradient);
+  background: linear-gradient(135deg, var(--teal) 0%, #1d4044 100%);
   color: white;
   font-weight: 600;
   text-transform: uppercase;
-  font-size: 0.75em;
-  letter-spacing: 0.05em;
+  font-size: 0.7em;
+  letter-spacing: 0.1em;
+  padding: 1rem;
 }
 
 td {
-  background: white;
-  border-bottom: 1px solid var(--pe-gray-100);
+  background: var(--dark-card);
+  color: var(--slate);
+  border-bottom: 1px solid var(--dark-border);
+  padding: 0.75rem 1rem;
 }
 
+/* Grid cards */
 .grid > div {
-  background: white;
+  background: var(--dark-card);
   border-radius: 12px;
   padding: 1.5rem;
-  box-shadow: 0 2px 12px rgba(52, 64, 84, 0.06);
-  border: 1px solid var(--pe-gray-100);
+  border: 1px solid var(--dark-border);
   transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.grid > div::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--teal), transparent);
+  opacity: 0;
+  transition: opacity 0.3s ease;
 }
 
 .grid > div:hover {
-  box-shadow: 0 8px 24px rgba(49, 151, 149, 0.12);
-  border-color: var(--pe-teal-300);
+  border-color: var(--teal);
+  box-shadow: 0 0 30px rgba(49, 151, 149, 0.15);
   transform: translateY(-2px);
 }
 
-.border-2 {
-  border: 2px solid var(--pe-teal-300) !important;
-  border-radius: 12px;
+.grid > div:hover::before {
+  opacity: 1;
+}
+
+/* Two-cols layout fix */
+.slidev-layout.two-columns {
+  gap: 3rem;
+}
+
+/* Images */
+img {
+  filter: brightness(1.1);
+}
+
+/* Number highlights */
+.stat-number {
+  font-family: 'Inter', sans-serif;
+  font-weight: 800;
+  font-size: 3rem;
+  color: var(--teal-bright);
+  text-shadow: 0 0 40px var(--teal-glow);
 }
 
 </style>
@@ -199,7 +274,7 @@ layout: two-cols
 
 # The Revolution: Claude 4.5 Opus in Claude Code
 
-## What Changed Everything (October 2025)
+## What Changed Everything (December 2025)
 - **Claude 4.5 Opus**: Most capable model, now in Claude Code
 - **Extended thinking**: Deeper reasoning for complex policy analysis
 - **Agentic capabilities**: Runs tools, writes code, manages git, deploys
@@ -552,30 +627,31 @@ class: text-center
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-  width: 120px;
-  height: 4px;
-  background: linear-gradient(90deg, #319795 0%, #4FD1C5 50%, #319795 100%);
-  border-radius: 2px;
+  width: 200px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #4FD1C5, transparent);
+  box-shadow: 0 0 20px rgba(79, 209, 197, 0.5);
 }
 
-.closing-accent-top { top: 2rem; }
-.closing-accent-bottom { bottom: 2rem; }
+.closing-accent-top { top: 3rem; }
+.closing-accent-bottom { bottom: 3rem; }
 
 .closing-title {
-  font-size: 2.5rem;
-  font-weight: 700;
-  color: #344054;
-  letter-spacing: -0.02em;
+  font-family: 'Inter', sans-serif;
+  font-size: 3rem;
+  font-weight: 800;
+  color: #f8fafc;
+  letter-spacing: -0.03em;
   margin-bottom: 0.5rem;
 }
 
-.closing-title::after { display: none; }
+.closing-title::before { display: none; }
 
 .closing-subtitle {
   font-size: 1.25rem;
-  color: #319795;
+  color: #4FD1C5;
   font-weight: 400;
-  margin-bottom: 2.5rem;
+  margin-bottom: 3rem;
 }
 
 .closing-contact {
@@ -583,29 +659,32 @@ class: text-center
 }
 
 .closing-card {
-  background: white;
-  padding: 2rem 3rem;
+  background: #111827;
+  padding: 2.5rem 4rem;
   border-radius: 16px;
-  box-shadow: 0 4px 24px rgba(52, 64, 84, 0.1);
-  border: 1px solid #F2F4F7;
+  border: 1px solid #1e293b;
   text-align: center;
+  box-shadow: 0 0 60px rgba(49, 151, 149, 0.15);
 }
 
 .closing-logo {
-  height: 40px;
-  margin-bottom: 1rem;
+  height: 48px;
+  margin-bottom: 1.5rem;
+  filter: brightness(1.2);
 }
 
 .closing-name {
-  font-weight: 600;
-  color: #344054;
-  font-size: 1.25rem;
-  margin: 0 0 0.25rem 0;
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  color: #f8fafc;
+  font-size: 1.5rem;
+  margin: 0 0 0.5rem 0;
 }
 
 .closing-email {
-  color: #319795;
-  font-size: 1rem;
+  color: #4FD1C5;
+  font-size: 1.1rem;
   margin: 0;
+  font-family: 'JetBrains Mono', monospace;
 }
 </style>
