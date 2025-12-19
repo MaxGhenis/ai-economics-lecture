@@ -320,33 +320,20 @@ def test_snap_benefits():
 
 # Claude Code Can Write Papers Too
 
-## Example: CRFB TOB Budget Analysis
-**[policyengine.github.io/crfb-tob-impacts](https://policyengine.github.io/crfb-tob-impacts)**
+## Example: [policyengine.github.io/crfb-tob-impacts](https://policyengine.github.io/crfb-tob-impacts)
 
-Claude Code built the entire JupyterBook:
-- Policy analysis and narrative
-- Data visualizations
-- Interactive tables
-- Deployed automatically
-
-## The Workflow
+Claude Code built the entire JupyterBook: analysis, visualizations, tables, deployment.
 
 ```bash
 # User prompt:
-"Analyze the budget impact of CRFB's proposals
-using PolicyEngine microsim. Create a JupyterBook
-with executive summary, methodology, and results."
+"Analyze CRFB's proposals with PolicyEngine. Create a JupyterBook."
 
 # Claude Code does:
-✓ Creates repo structure
-✓ Writes analysis code with TDD
-✓ Generates figures and tables
-✓ Writes narrative sections
-✓ Sets up CI/CD
-✓ Deploys to GitHub Pages
+✓ Creates repo  ✓ Writes analysis  ✓ Generates figures
+✓ Writes narrative  ✓ Sets up CI/CD  ✓ Deploys to GitHub Pages
 ```
 
-**Result**: Publication-ready analysis in hours, not weeks
+**Result**: Publication-ready analysis in **hours, not weeks**
 
 ---
 
@@ -376,28 +363,24 @@ Encoding state TANF rules into PolicyEngine: **~2 weeks per state**
 
 # What Are Claude Code Plugins?
 
-## Customizing AI for Your Domain
+## Stop Writing Code - Just Ask Questions
 
-Plugins let you teach Claude Code about your specific domain:
+With a PolicyEngine plugin, I don't write code anymore. I just ask:
 
-```yaml
-# .claude/agents/policyengine-dev.md
-name: PolicyEngine Developer
-description: Encodes tax-benefit rules into PolicyEngine
-tools: [Bash, Read, Write, Edit, Grep]
+> "What's the total cost of EITC in 2025?"
 
-You are an expert in the PolicyEngine microsimulation
-framework. When encoding benefit rules:
-1. Create parameters in YAML
-2. Write vectorized formulas
-3. Generate test cases from policy documents
-4. Validate against official examples
-```
+Claude Code runs the microsim and tells me: **$49.6 billion**
 
-## Why This Matters
-- **Domain expertise baked in** - Claude knows PE conventions
-- **Consistent output** - follows our coding patterns
-- **Scalable** - junior team members get senior-level guidance
+> "How would doubling the maximum credit affect that?"
+
+It writes the reform, runs it, and reports the results.
+
+## Plugin Components (skills, agents, commands)
+Teach Claude Code your domain: coding conventions, API patterns, workflows
+
+## The Shift
+**Before:** Write code → debug → iterate → get answer
+**After:** Ask question → get answer
 
 ---
 
@@ -408,22 +391,13 @@ framework. When encoding benefit rules:
 ```python
 from policyengine_us import Microsimulation
 sim = Microsimulation()
-
-# Answer policy questions instantly:
-eitc_total = sim.calculate("eitc", period=2025).sum() / 1e9
-ctc_total = sim.calculate("ctc", period=2025).sum() / 1e9
-snap_total = sim.calculate("snap", period=2025).sum() / 1e9
-
-# Results:
-# Total federal EITC:      $49.6 billion
-# Total Child Tax Credit:  $140.7 billion
-# Total SNAP benefits:     $91.9 billion
+eitc = sim.calculate("eitc", period=2025).sum() / 1e9  # $49.6B
+ctc = sim.calculate("ctc", period=2025).sum() / 1e9   # $140.7B
+snap = sim.calculate("snap", period=2025).sum() / 1e9  # $91.9B
 ```
 
-## What Should We Build?
-
-**Ideas (you pick!):**
-- Policy reform analysis (e.g., expand EITC)
+## What Should We Build? (you pick!)
+- Policy reform analysis (expand EITC, CTC, SNAP)
 - State-level benefit comparison
 - Interactive calculator (deployed live!)
 - Something from your research agenda?
