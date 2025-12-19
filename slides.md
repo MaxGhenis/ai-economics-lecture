@@ -13,17 +13,14 @@ fonts:
   mono: 'Fira Code'
 ---
 
-<div class="cover-container">
-  <div class="cover-accent"></div>
-  <h1 class="cover-title">Agentic AI for Policy Research</h1>
-  <p class="cover-subtitle">Multi-Agent Workflows & Microsimulation</p>
-  <div class="cover-footer">
-    <img src="/images/policyengine-new-logo.png" class="cover-logo" />
-    <div class="cover-meta">
-      <p class="cover-author">Max Ghenis · PolicyEngine</p>
-      <p class="cover-venue">Urban Institute · December 2025</p>
-    </div>
-  </div>
+# Agentic AI for Policy Research
+
+## Multi-Agent Workflows & Microsimulation
+
+<div class="pt-12">
+  <img src="/images/policyengine-new-logo.png" class="h-12 mb-4" />
+  <p class="text-xl font-semibold">Max Ghenis · PolicyEngine</p>
+  <p class="text-lg opacity-70">Urban Institute · December 2025</p>
 </div>
 
 <style>
@@ -167,77 +164,6 @@ td {
   border-radius: 12px;
 }
 
-/* Cover slide styles */
-.cover-container {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  position: relative;
-  padding: 2rem;
-}
-
-.cover-accent {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 8px;
-  height: 100%;
-  background: var(--pe-gradient);
-}
-
-.cover-title {
-  font-size: 3.5rem;
-  font-weight: 800;
-  color: var(--pe-gray-700);
-  letter-spacing: -0.03em;
-  line-height: 1.1;
-  margin-bottom: 0.5rem;
-}
-
-.cover-title::after {
-  display: none;
-}
-
-.cover-subtitle {
-  font-size: 1.5rem;
-  font-weight: 400;
-  color: var(--pe-teal-500);
-  letter-spacing: -0.01em;
-  margin-top: 1rem;
-}
-
-.cover-footer {
-  position: absolute;
-  bottom: 3rem;
-  left: 2rem;
-  display: flex;
-  align-items: center;
-  gap: 1.5rem;
-}
-
-.cover-logo {
-  height: 48px;
-  width: auto;
-}
-
-.cover-meta {
-  border-left: 2px solid var(--pe-gray-100);
-  padding-left: 1.5rem;
-}
-
-.cover-author {
-  font-weight: 600;
-  color: var(--pe-gray-700);
-  font-size: 1.1rem;
-  margin: 0;
-}
-
-.cover-venue {
-  color: var(--pe-gray-500);
-  font-size: 0.95rem;
-  margin: 0;
-}
 </style>
 
 ---
